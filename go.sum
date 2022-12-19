@@ -1,0 +1,6 @@
+github.com/antlr/antlr4 v0.0.0-20200225173536-225249fdaef5 h1:nkZ9axP+MvUFCu8JRN/MCY+DmTfs6lY7hE0QnJbxSdI=
+github.com/antlr/antlr4 v0.0.0-20200225173536-225249fdaef5/go.mod h1:T7PbCXFs94rrTttyxjbyT5+/1V8T2TYDejxUfHJjw1Y=
+github.com/earthly/earthly/ast v0.0.1 h1:gFllvl2dRYrkDT8J8DQHZIDG69O0k5c9Emc+WGi0YQw=
+github.com/earthly/earthly/ast v0.0.1/go.mod h1:VMx7aZRS7kQSl7HaKTtolfZvkCGmIeYPqf5o2vfXvUY=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
