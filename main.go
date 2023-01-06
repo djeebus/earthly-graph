@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"sort"
 	"strings"
 
 	"github.com/earthly/earthly/ast"
@@ -35,12 +36,38 @@ func main() {
 		processBlock(target, target.Recipe, graph)
 	}
 
-	println("graph TD")
-	for name, targets := range graph {
-		for target := range targets {
+	fmt.Println("```mermaid")
+	fmt.Println("graph TD")
+	sorted := sortedKeys(graph)
+	for _, name := range sorted {
+		targets := sortedMap(graph[name])
+		sort.Strings(targets)
+		for _, target := range targets {
 			fmt.Printf("\t%s --> %s\n", name, target)
 		}
 	}
+	fmt.Println("```")
+}
+
+func sortedMap(set map[string]struct{}) []string {
+	var keys []string
+	for key := range set {
+		keys = append(keys, key)
+	}
+
+	sort.Strings(keys)
+	return keys
+}
+
+func sortedKeys(graph Graph) []string {
+	var keys []string
+	for key := range graph {
+		keys = append(keys, key)
+	}
+
+	sort.Strings(keys)
+
+	return keys
 }
 
 func processBlock(target spec.Target, block spec.Block, graph Graph) {
